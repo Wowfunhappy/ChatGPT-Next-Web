@@ -1316,7 +1316,7 @@ export function Settings() {
             </Popover>
           </ListItem>
 
-          <ListItem
+          {/*<ListItem
             title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
             subTitle={
               checkingUpdate
@@ -1339,7 +1339,7 @@ export function Settings() {
                 onClick={() => checkUpdate(true)}
               />
             )}
-          </ListItem>
+          </ListItem>*/}
 
           <ListItem title={Locale.Settings.SendKey}>
             <Select
@@ -1360,7 +1360,7 @@ export function Settings() {
             </Select>
           </ListItem>
 
-          <ListItem title={Locale.Settings.Theme}>
+          {/*<ListItem title={Locale.Settings.Theme}>
             <Select
               aria-label={Locale.Settings.Theme}
               value={config.theme}
@@ -1376,9 +1376,9 @@ export function Settings() {
                 </option>
               ))}
             </Select>
-          </ListItem>
+          </ListItem>*/}
 
-          <ListItem title={Locale.Settings.Lang.Name}>
+          {/*<ListItem title={Locale.Settings.Lang.Name}>
             <Select
               aria-label={Locale.Settings.Lang.Name}
               value={getLang()}
@@ -1392,7 +1392,7 @@ export function Settings() {
                 </option>
               ))}
             </Select>
-          </ListItem>
+          </ListItem>*/}
 
           <ListItem
             title={Locale.Settings.FontSize.Title}
