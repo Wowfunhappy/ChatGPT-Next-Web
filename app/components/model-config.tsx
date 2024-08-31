@@ -143,7 +143,7 @@ export function ModelConfigList(props: {
             ></InputRange>
           </ListItem>
 
-          <ListItem
+          {/*<ListItem
             title={Locale.Settings.InjectSystemPrompts.Title}
             subTitle={Locale.Settings.InjectSystemPrompts.SubTitle}
           >
@@ -159,7 +159,7 @@ export function ModelConfigList(props: {
                 )
               }
             ></input>
-          </ListItem>
+          </ListItem>*/}
 
           <ListItem
             title={Locale.Settings.InputTemplate.Title}
@@ -197,7 +197,7 @@ export function ModelConfigList(props: {
         ></InputRange>
       </ListItem>
 
-      <ListItem
+      {/*<ListItem
         title={Locale.Settings.CompressThreshold.Title}
         subTitle={Locale.Settings.CompressThreshold.SubTitle}
       >
@@ -227,7 +227,7 @@ export function ModelConfigList(props: {
             )
           }
         ></input>
-      </ListItem>
+      </ListItem>*/}
     </>
   );
 }
