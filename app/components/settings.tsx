@@ -53,11 +53,11 @@ import Link from "next/link";
 import {
   Anthropic,
   Azure,
-  Baidu,
-  Tencent,
-  ByteDance,
-  Alibaba,
-  Moonshot,
+  //Baidu,
+  //Tencent,
+  //ByteDance,
+  //Alibaba,
+  //Moonshot,
   Google,
   GoogleSafetySettingsThreshold,
   OPENAI_BASE_URL,
@@ -67,8 +67,8 @@ import {
   ServiceProvider,
   SlotID,
   UPDATE_URL,
-  Stability,
-  Iflytek,
+  //Stability,
+  //Iflytek,
 } from "../constant";
 import { Prompt, SearchService, usePromptStore } from "../store/prompt";
 import { ErrorBoundary } from "./error";
@@ -935,7 +935,7 @@ export function Settings() {
     </>
   );
 
-  const baiduConfigComponent = accessStore.provider ===
+  /*const baiduConfigComponent = accessStore.provider ===
     ServiceProvider.Baidu && (
     <>
       <ListItem
@@ -1262,7 +1262,7 @@ export function Settings() {
         />
       </ListItem>
     </>
-  );
+  );*/
 
   return (
     <ErrorBoundary>
@@ -1575,13 +1575,13 @@ export function Settings() {
                   {azureConfigComponent}
                   {googleConfigComponent}
                   {anthropicConfigComponent}
-                  {baiduConfigComponent}
+                  {/*{baiduConfigComponent}
                   {byteDanceConfigComponent}
                   {alibabaConfigComponent}
                   {tencentConfigComponent}
                   {moonshotConfigComponent}
                   {stabilityConfigComponent}
-                  {lflytekConfigComponent}
+                  {lflytekConfigComponent}*/}
                 </>
               )}
             </>

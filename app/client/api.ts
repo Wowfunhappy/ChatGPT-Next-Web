@@ -9,12 +9,12 @@ import { ChatMessage, ModelType, useAccessStore, useChatStore } from "../store";
 import { ChatGPTApi, DalleRequestPayload } from "./platforms/openai";
 import { GeminiProApi } from "./platforms/google";
 import { ClaudeApi } from "./platforms/anthropic";
-import { ErnieApi } from "./platforms/baidu";
-import { DoubaoApi } from "./platforms/bytedance";
-import { QwenApi } from "./platforms/alibaba";
-import { HunyuanApi } from "./platforms/tencent";
-import { MoonshotApi } from "./platforms/moonshot";
-import { SparkApi } from "./platforms/iflytek";
+//import { ErnieApi } from "./platforms/baidu";
+//import { DoubaoApi } from "./platforms/bytedance";
+//import { QwenApi } from "./platforms/alibaba";
+//import { HunyuanApi } from "./platforms/tencent";
+//import { MoonshotApi } from "./platforms/moonshot";
+//import { SparkApi } from "./platforms/iflytek";
 
 export const ROLES = ["system", "user", "assistant"] as const;
 export type MessageRole = (typeof ROLES)[number];
@@ -116,7 +116,7 @@ export class ClientApi {
       case ModelProvider.Claude:
         this.llm = new ClaudeApi();
         break;
-      case ModelProvider.Ernie:
+      /*case ModelProvider.Ernie:
         this.llm = new ErnieApi();
         break;
       case ModelProvider.Doubao:
@@ -133,7 +133,7 @@ export class ClientApi {
         break;
       case ModelProvider.Iflytek:
         this.llm = new SparkApi();
-        break;
+        break;*/
       default:
         this.llm = new ChatGPTApi();
     }
@@ -213,11 +213,11 @@ export function getHeaders() {
     const isGoogle = modelConfig.providerName == ServiceProvider.Google;
     const isAzure = modelConfig.providerName === ServiceProvider.Azure;
     const isAnthropic = modelConfig.providerName === ServiceProvider.Anthropic;
-    const isBaidu = modelConfig.providerName == ServiceProvider.Baidu;
+    /*const isBaidu = modelConfig.providerName == ServiceProvider.Baidu;
     const isByteDance = modelConfig.providerName === ServiceProvider.ByteDance;
     const isAlibaba = modelConfig.providerName === ServiceProvider.Alibaba;
     const isMoonshot = modelConfig.providerName === ServiceProvider.Moonshot;
-    const isIflytek = modelConfig.providerName === ServiceProvider.Iflytek;
+    const isIflytek = modelConfig.providerName === ServiceProvider.Iflytek;*/
     const isEnabledAccessControl = accessStore.enabledAccessControl();
     const apiKey = isGoogle
       ? accessStore.googleApiKey
@@ -225,7 +225,7 @@ export function getHeaders() {
       ? accessStore.azureApiKey
       : isAnthropic
       ? accessStore.anthropicApiKey
-      : isByteDance
+      /*: isByteDance
       ? accessStore.bytedanceApiKey
       : isAlibaba
       ? accessStore.alibabaApiKey
@@ -234,17 +234,17 @@ export function getHeaders() {
       : isIflytek
       ? accessStore.iflytekApiKey && accessStore.iflytekApiSecret
         ? accessStore.iflytekApiKey + ":" + accessStore.iflytekApiSecret
-        : ""
+        : ""*/
       : accessStore.openaiApiKey;
     return {
       isGoogle,
       isAzure,
       isAnthropic,
-      isBaidu,
-      isByteDance,
-      isAlibaba,
-      isMoonshot,
-      isIflytek,
+      //isBaidu,
+      //isByteDance,
+      //isAlibaba,
+      //isMoonshot,
+      //isIflytek,
       apiKey,
       isEnabledAccessControl,
     };
@@ -258,14 +258,14 @@ export function getHeaders() {
     isGoogle,
     isAzure,
     isAnthropic,
-    isBaidu,
+    //isBaidu,
     apiKey,
     isEnabledAccessControl,
   } = getConfig();
   // when using google api in app, not set auth header
   if (isGoogle && clientConfig?.isApp) return headers;
   // when using baidu api in app, not set auth header
-  if (isBaidu && clientConfig?.isApp) return headers;
+  //if (isBaidu && clientConfig?.isApp) return headers;
 
   const authHeader = getAuthHeader();
 
@@ -288,7 +288,7 @@ export function getClientApi(provider: ServiceProvider): ClientApi {
       return new ClientApi(ModelProvider.GeminiPro);
     case ServiceProvider.Anthropic:
       return new ClientApi(ModelProvider.Claude);
-    case ServiceProvider.Baidu:
+    /*case ServiceProvider.Baidu:
       return new ClientApi(ModelProvider.Ernie);
     case ServiceProvider.ByteDance:
       return new ClientApi(ModelProvider.Doubao);
@@ -299,7 +299,7 @@ export function getClientApi(provider: ServiceProvider): ClientApi {
     case ServiceProvider.Moonshot:
       return new ClientApi(ModelProvider.Moonshot);
     case ServiceProvider.Iflytek:
-      return new ClientApi(ModelProvider.Iflytek);
+      return new ClientApi(ModelProvider.Iflytek);*/
     default:
       return new ClientApi(ModelProvider.GPT);
   }

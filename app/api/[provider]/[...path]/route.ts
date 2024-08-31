@@ -4,12 +4,12 @@ import { handle as openaiHandler } from "../../openai";
 import { handle as azureHandler } from "../../azure";
 import { handle as googleHandler } from "../../google";
 import { handle as anthropicHandler } from "../../anthropic";
-import { handle as baiduHandler } from "../../baidu";
-import { handle as bytedanceHandler } from "../../bytedance";
-import { handle as alibabaHandler } from "../../alibaba";
-import { handle as moonshotHandler } from "../../moonshot";
-import { handle as stabilityHandler } from "../../stability";
-import { handle as iflytekHandler } from "../../iflytek";
+//import { handle as baiduHandler } from "../../baidu";
+//import { handle as bytedanceHandler } from "../../bytedance";
+//import { handle as alibabaHandler } from "../../alibaba";
+//import { handle as moonshotHandler } from "../../moonshot";
+//import { handle as stabilityHandler } from "../../stability";
+//import { handle as iflytekHandler } from "../../iflytek";
 async function handle(
   req: NextRequest,
   { params }: { params: { provider: string; path: string[] } },
@@ -23,19 +23,19 @@ async function handle(
       return googleHandler(req, { params });
     case ApiPath.Anthropic:
       return anthropicHandler(req, { params });
-    case ApiPath.Baidu:
-      return baiduHandler(req, { params });
-    case ApiPath.ByteDance:
-      return bytedanceHandler(req, { params });
-    case ApiPath.Alibaba:
-      return alibabaHandler(req, { params });
+    //case ApiPath.Baidu:
+      //return baiduHandler(req, { params });
+    //case ApiPath.ByteDance:
+      //return bytedanceHandler(req, { params });
+    //case ApiPath.Alibaba:
+      //return alibabaHandler(req, { params });
     // case ApiPath.Tencent: using "/api/tencent"
-    case ApiPath.Moonshot:
-      return moonshotHandler(req, { params });
-    case ApiPath.Stability:
-      return stabilityHandler(req, { params });
-    case ApiPath.Iflytek:
-      return iflytekHandler(req, { params });
+    //case ApiPath.Moonshot:
+      //return moonshotHandler(req, { params });
+    //case ApiPath.Stability:
+      //return stabilityHandler(req, { params });
+    //case ApiPath.Iflytek:
+      //return iflytekHandler(req, { params });
     default:
       return openaiHandler(req, { params });
   }

@@ -67,16 +67,16 @@ export function auth(req: NextRequest, modelProvider: ModelProvider) {
     let systemApiKey: string | undefined;
 
     switch (modelProvider) {
-      case ModelProvider.Stability:
+      /*case ModelProvider.Stability:
         systemApiKey = serverConfig.stabilityApiKey;
-        break;
+        break;*/
       case ModelProvider.GeminiPro:
         systemApiKey = serverConfig.googleApiKey;
         break;
       case ModelProvider.Claude:
         systemApiKey = serverConfig.anthropicApiKey;
         break;
-      case ModelProvider.Doubao:
+      /*case ModelProvider.Doubao:
         systemApiKey = serverConfig.bytedanceApiKey;
         break;
       case ModelProvider.Ernie:
@@ -91,7 +91,7 @@ export function auth(req: NextRequest, modelProvider: ModelProvider) {
       case ModelProvider.Iflytek:
         systemApiKey =
           serverConfig.iflytekApiKey + ":" + serverConfig.iflytekApiSecret;
-        break;
+        break;*/
       case ModelProvider.GPT:
       default:
         if (req.nextUrl.pathname.includes("azure/deployments")) {

@@ -105,13 +105,13 @@ export enum ServiceProvider {
   Azure = "Azure",
   Google = "Google",
   Anthropic = "Anthropic",
-  Baidu = "Baidu",
-  ByteDance = "ByteDance",
-  Alibaba = "Alibaba",
-  Tencent = "Tencent",
-  Moonshot = "Moonshot",
-  Stability = "Stability",
-  Iflytek = "Iflytek",
+  //Baidu = "Baidu",
+  //ByteDance = "ByteDance",
+  //Alibaba = "Alibaba",
+  //Tencent = "Tencent",
+  //Moonshot = "Moonshot",
+  //Stability = "Stability",
+  //Iflytek = "Iflytek",
 }
 
 // Google API safety settings, see https://ai.google.dev/gemini-api/docs/safety-settings
@@ -124,16 +124,16 @@ export enum GoogleSafetySettingsThreshold {
 }
 
 export enum ModelProvider {
-  Stability = "Stability",
+  //Stability = "Stability",
   GPT = "GPT",
   GeminiPro = "GeminiPro",
   Claude = "Claude",
-  Ernie = "Ernie",
-  Doubao = "Doubao",
-  Qwen = "Qwen",
-  Hunyuan = "Hunyuan",
-  Moonshot = "Moonshot",
-  Iflytek = "Iflytek",
+  //Ernie = "Ernie",
+  //Doubao = "Doubao",
+  //Qwen = "Qwen",
+  //Hunyuan = "Hunyuan",
+  //Moonshot = "Moonshot",
+  //Iflytek = "Iflytek",
 }
 
 export const Stability = {
@@ -255,22 +255,22 @@ export const KnowledgeCutOffDate: Record<string, string> = {
 
 const openaiModels = [
   "gpt-3.5-turbo",
-  "gpt-3.5-turbo-1106",
-  "gpt-3.5-turbo-0125",
+  //"gpt-3.5-turbo-1106",
+  //"gpt-3.5-turbo-0125",
   "gpt-4",
-  "gpt-4-0613",
-  "gpt-4-32k",
-  "gpt-4-32k-0613",
+  //"gpt-4-0613",
+  //"gpt-4-32k",
+  //"gpt-4-32k-0613",
   "gpt-4-turbo",
-  "gpt-4-turbo-preview",
+  //"gpt-4-turbo-preview",
   "gpt-4o",
-  "gpt-4o-2024-05-13",
-  "gpt-4o-2024-08-06",
+  //"gpt-4o-2024-05-13",
+  //"gpt-4o-2024-08-06",
   "gpt-4o-mini",
-  "gpt-4o-mini-2024-07-18",
-  "gpt-4-vision-preview",
-  "gpt-4-turbo-2024-04-09",
-  "gpt-4-1106-preview",
+  //"gpt-4o-mini-2024-07-18",
+  //"gpt-4-vision-preview",
+  //"gpt-4-turbo-2024-04-09",
+  //"gpt-4-1106-preview",
   "dall-e-3",
 ];
 
@@ -390,7 +390,7 @@ export const DEFAULT_MODELS = [
       sorted: 4,
     },
   })),
-  ...baiduModels.map((name) => ({
+  /*...baiduModels.map((name) => ({
     name,
     available: true,
     sorted: seq++,
@@ -455,7 +455,7 @@ export const DEFAULT_MODELS = [
       providerType: "iflytek",
       sorted: 10,
     },
-  })),
+  })),*/
 ] as const;
 
 export const CHAT_PAGE_SIZE = 15;
