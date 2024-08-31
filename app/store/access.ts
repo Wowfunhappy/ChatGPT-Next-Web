@@ -15,17 +15,11 @@ let fetchState = 0; // 0 not fetch, 1 fetching, 2 done
 
 const isApp = getClientConfig()?.buildMode === "export";
 
-const DEFAULT_OPENAI_URL = isApp
-  ? DEFAULT_API_HOST + "/api/proxy/openai"
-  : ApiPath.OpenAI;
+const DEFAULT_OPENAI_URL = "https://api.openai.com";
 
-const DEFAULT_GOOGLE_URL = isApp
-  ? DEFAULT_API_HOST + "/api/proxy/google"
-  : ApiPath.Google;
+const DEFAULT_GOOGLE_URL = "https://generativelanguage.googleapis.com";
 
-const DEFAULT_ANTHROPIC_URL = isApp
-  ? DEFAULT_API_HOST + "/api/proxy/anthropic"
-  : ApiPath.Anthropic;
+const DEFAULT_ANTHROPIC_URL = "https://api.anthropic.com";
 
 const DEFAULT_BAIDU_URL = isApp
   ? DEFAULT_API_HOST + "/api/proxy/baidu"
