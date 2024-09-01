@@ -115,7 +115,7 @@ const useHasHydrated = () => {
   return hasHydrated;
 };
 
-const loadAsyncGoogleFont = () => {
+/*const loadAsyncGoogleFont = () => {
   const linkEl = document.createElement("link");
   const proxyFontUrl = "/google-fonts";
   const remoteFontUrl = "https://fonts.googleapis.com";
@@ -128,7 +128,7 @@ const loadAsyncGoogleFont = () => {
     encodeURIComponent("Noto Sans:wght@300;400;700;900") +
     "&display=swap";
   document.head.appendChild(linkEl);
-};
+};*/
 
 export function WindowContent(props: { children: React.ReactNode }) {
   return (
@@ -152,7 +152,7 @@ function Screen() {
     getClientConfig()?.isApp || (config.tightBorder && !isMobileScreen);
 
   useEffect(() => {
-    loadAsyncGoogleFont();
+    //loadAsyncGoogleFont();
   }, []);
 
   if (isArtifact) {

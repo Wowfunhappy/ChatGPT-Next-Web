@@ -159,7 +159,7 @@ export function ModelConfigList(props: {
                 )
               }
             ></input>
-          </ListItem>*/}
+          </ListItem>
 
           <ListItem
             title={Locale.Settings.InputTemplate.Title}
@@ -175,26 +175,25 @@ export function ModelConfigList(props: {
                 )
               }
             ></input>
-          </ListItem>
+          </ListItem>*/}
         </>
       )}
       <ListItem
         title={Locale.Settings.HistoryCount.Title}
         subTitle={Locale.Settings.HistoryCount.SubTitle}
       >
-        <InputRange
-          aria={Locale.Settings.HistoryCount.Title}
-          title={props.modelConfig.historyMessageCount.toString()}
+        <input
+          aria-label={Locale.Settings.HistoryCount.Title}
+          type="number"
+          min={0}
+          max={1000}
           value={props.modelConfig.historyMessageCount}
-          min="0"
-          max="64"
-          step="1"
           onChange={(e) =>
             props.updateConfig(
               (config) => (config.historyMessageCount = e.target.valueAsNumber),
             )
           }
-        ></InputRange>
+        ></input>
       </ListItem>
 
       {/*<ListItem

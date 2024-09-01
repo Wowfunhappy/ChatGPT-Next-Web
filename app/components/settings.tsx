@@ -1414,7 +1414,7 @@ export function Settings() {
             ></InputRange>
           </ListItem>
 
-          <ListItem
+          {/*<ListItem
             title={Locale.Settings.FontFamily.Title}
             subTitle={Locale.Settings.FontFamily.SubTitle}
           >
@@ -1429,7 +1429,7 @@ export function Settings() {
                 )
               }
             ></input>
-          </ListItem>
+          </ListItem>*/}
 
           <ListItem
             title={Locale.Settings.AutoGenerateTitle.Title}
