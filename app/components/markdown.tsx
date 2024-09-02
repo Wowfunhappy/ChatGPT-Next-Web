@@ -158,7 +158,7 @@ export function PreCode(props: { children: any }) {
 
 function CustomCode(props: { children: any }) {
   const ref = useRef<HTMLPreElement>(null);
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
 
   useEffect(() => {
@@ -188,7 +188,7 @@ function CustomCode(props: { children: any }) {
               collapsed ? "collapsed" : "expanded"
             }`}
           >
-            <button onClick={toggleCollapsed}>查看全部</button>
+            <button onClick={toggleCollapsed}>view all</button>
           </div>
         )}
       </code>
