@@ -75,12 +75,12 @@ const en: LocaleType = {
       if (submitKey === String(SubmitKey.Enter)) {
         inputHints += ", Shift + Enter to wrap";
       }
-      return inputHints + ", / to search prompts, : to use commands";
+      return inputHints;
     },
     Send: "Send",
     Config: {
       Reset: "Reset to Default",
-      SaveAs: "Save as Mask",
+      SaveAs: "Save as Template",
     },
     IsContext: "Contextual Prompt",
   },
@@ -529,10 +529,10 @@ const en: LocaleType = {
   Mask: {
     Name: "Mask",
     Page: {
-      Title: "Masks",
-      SubTitle: (count: number) => `${count} masks`,
-      Search: "Search Masks",
-      Create: "Create",
+      Title: "Prompt Template",
+      SubTitle: (count: number) => `${count} templates`,
+      Search: "Search Templates",
+      Create: "New Template",
     },
     Item: {
       Info: (count: number) => `${count} prompts`,
@@ -540,7 +540,7 @@ const en: LocaleType = {
       View: "View",
       Edit: "Edit",
       Delete: "Delete",
-      DeleteConfirm: "Delete this mask?",
+      DeleteConfirm: "Delete this template?",
     },
     EditModal: {
       Title: (readonly: boolean) =>

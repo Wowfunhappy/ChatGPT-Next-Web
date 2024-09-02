@@ -37,6 +37,15 @@ const appMenuTemplate = [
 					}
 				}
 			},
+			{
+				label: 'New Chat From Template...',
+				accelerator: 'CmdOrCtrl+Shift+N',
+				click: (menuItem, browserWindow) => {
+					if (browserWindow) {
+						browserWindow.webContents.send('navigate', '#/masks');
+					}
+				}
+			},
 			/*{
 				label: 'New Window',
 				accelerator: 'CmdOrCtrl+N',
@@ -48,7 +57,7 @@ const appMenuTemplate = [
 			{/*-------------------------*/  type: 'separator'},
 			{role: 'close'},
 			{/*-------------------------*/  type: 'separator'},
-			{
+			/*{
 				label: 'Print...',
 				accelerator: 'CmdOrCtrl+P',
 				click: (menuItem, browserWindow) => {
@@ -58,7 +67,7 @@ const appMenuTemplate = [
 						});
 					}
 				}
-			},
+			},*/
 		]
 	},
 	{
