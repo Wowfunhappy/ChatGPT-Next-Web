@@ -60,7 +60,7 @@ export const DEFAULT_CONFIG = {
     sendMemory: true,
     historyMessageCount: 20,
     compressMessageLengthThreshold: 1000000000,
-    enableInjectSystemPrompts: true,
+    enableInjectSystemPrompts: false,
     template: config?.template ?? DEFAULT_INPUT_TEMPLATE,
     size: "1024x1024" as DalleSize,
     quality: "standard" as DalleQuality,
