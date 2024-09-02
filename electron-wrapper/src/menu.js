@@ -95,7 +95,7 @@ const appMenuTemplate = [
 	{
 		label: 'View',
 		submenu: [
-			{role: 'toggledevtools'},
+			//{role: 'toggledevtools'},
 			{/*-------------------------*/  type: 'separator'},
 			//{role: 'resetzoom'},
 			//{role: 'zoomin', accelerator: ''}, //ideally this should display ⌘+ but also work with ⌘=, but Electron is broken.
