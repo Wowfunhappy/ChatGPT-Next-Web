@@ -545,7 +545,7 @@ const en: LocaleType = {
     EditModal: {
       Title: (readonly: boolean) =>
         `Edit Prompt Template ${readonly ? "(readonly)" : ""}`,
-      Download: "Download",
+      Download: "Export",
       Clone: "Clone",
     },
     Config: {
