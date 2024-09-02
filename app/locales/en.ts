@@ -9,7 +9,7 @@ const en: LocaleType = {
   WIP: "Coming Soon...",
   Error: {
     Unauthorized: isApp
-      ? "Invalid API Key, please check it in [Settings](/#/settings) page."
+      ? "Invalid API Key, please add a valid key in [Preferences](/#/settings)."
       : "Unauthorized access, please enter access code in [auth](/#/auth) page, or enter your OpenAI API Key.",
   },
   Auth: {
@@ -65,7 +65,7 @@ const en: LocaleType = {
       Prompt: "Prompts",
       Masks: "Masks",
       Clear: "Clear Context",
-      Settings: "Settings",
+      Settings: "Preferences",
       UploadImage: "Upload Images",
     },
     Rename: "Rename Chat",
@@ -129,26 +129,26 @@ const en: LocaleType = {
   },
   Home: {
     NewChat: "New Chat",
-    DeleteChat: "Confirm to delete the selected conversation?",
-    DeleteToast: "Chat Deleted",
+    DeleteChat: "Delete this conversation?",
+    DeleteToast: "Conversation Deleted",
     Revert: "Revert",
   },
   Settings: {
-    Title: "Settings",
-    SubTitle: "All Settings",
+    Title: "Preferences",
+    SubTitle: "",
     ShowPassword: "ShowPassword",
     Danger: {
       Reset: {
-        Title: "Reset All Settings",
-        SubTitle: "Reset all setting items to default",
+        Title: "Reset Preferences",
+        SubTitle: "",
         Action: "Reset",
-        Confirm: "Confirm to reset all settings to default?",
+        Confirm: "Are you sure you want to reset all preferences to their default settings?",
       },
       Clear: {
-        Title: "Clear All Data",
-        SubTitle: "Clear all messages and settings",
-        Action: "Clear",
-        Confirm: "Confirm to clear all messages and settings?",
+        Title: "Delete Everything",
+        SubTitle: "",
+        Action: "Delete",
+        Confirm: "Delete your entire chat history and reset all preferences?",
       },
     },
     Lang: {
@@ -158,7 +158,7 @@ const en: LocaleType = {
     Avatar: "Avatar",
     FontSize: {
       Title: "Font Size",
-      SubTitle: "Adjust font size of chat content",
+      SubTitle: "Adjust the font size of chat messages.",
     },
     FontFamily: {
       Title: "Chat Font Family",
@@ -187,12 +187,12 @@ const en: LocaleType = {
     Theme: "Theme",
     TightBorder: "Tight Border",
     SendPreviewBubble: {
-      Title: "Send Preview Bubble",
-      SubTitle: "Preview markdown in bubble",
+      Title: "Show Preview Bubble",
+      SubTitle: "Display a preview of your message as you type.",
     },
     AutoGenerateTitle: {
-      Title: "Auto Generate Title",
-      SubTitle: "Generate a suitable title based on the conversation content",
+      Title: "Generate Conversation Titles",
+      SubTitle: "Automatically generate a title for your conversations.",
     },
     Sync: {
       CloudState: "Last Update",
@@ -267,8 +267,8 @@ const en: LocaleType = {
       },
     },
     HistoryCount: {
-      Title: "Attached Messages Count",
-      SubTitle: "Number of sent messages attached per request",
+      Title: "Maximum Historical Messages",
+      SubTitle: "Maximum number of previous messages in a conversation to send to the model.",
     },
     CompressThreshold: {
       Title: "History Compression Threshold",
@@ -297,18 +297,18 @@ const en: LocaleType = {
       },
       Provider: {
         Title: "Model Provider",
-        SubTitle: "Select Azure or OpenAI",
+        SubTitle: "Select a provider to configure its settings:",
       },
       OpenAI: {
         ApiKey: {
           Title: "OpenAI API Key",
-          SubTitle: "User custom OpenAI Api Key",
+          SubTitle: "",
           Placeholder: "sk-xxx",
         },
 
         Endpoint: {
           Title: "OpenAI Endpoint",
-          SubTitle: "Must start with http(s):// or use /api/openai as default",
+          SubTitle: "Must start with https://",
         },
       },
       Azure: {
@@ -331,8 +331,7 @@ const en: LocaleType = {
       Anthropic: {
         ApiKey: {
           Title: "Anthropic API Key",
-          SubTitle:
-            "Use a custom Anthropic Key to bypass password access restrictions",
+          SubTitle: "",
           Placeholder: "Anthropic API Key",
         },
 
@@ -342,8 +341,8 @@ const en: LocaleType = {
         },
 
         ApiVerion: {
-          Title: "API Version (claude api version)",
-          SubTitle: "Select and input a specific API version",
+          Title: "API Version",
+          SubTitle: "",
         },
       },
       Baidu: {
@@ -445,8 +444,8 @@ const en: LocaleType = {
       Google: {
         ApiKey: {
           Title: "API Key",
-          SubTitle: "Obtain your API Key from Google AI",
-          Placeholder: "Enter your Google AI Studio API Key",
+          SubTitle: "",
+          Placeholder: "",
         },
 
         Endpoint: {
@@ -455,12 +454,12 @@ const en: LocaleType = {
         },
 
         ApiVersion: {
-          Title: "API Version (specific to gemini-pro)",
-          SubTitle: "Select a specific API version",
+          Title: "API Version",
+          SubTitle: "Only applies to gemini-pro.",
         },
         GoogleSafetySettings: {
           Title: "Google Safety Settings",
-          SubTitle: "Select a safety filtering level",
+          SubTitle: "Select a filtering level.",
         },
       },
     },
@@ -468,25 +467,25 @@ const en: LocaleType = {
     Model: "Model",
     Temperature: {
       Title: "Temperature",
-      SubTitle: "A larger value makes the more random output",
+      SubTitle: "Lower temperatures make output more predictable; higher temperatures make it more creative. If you adjust this value, leave Top P at the default.",
     },
     TopP: {
       Title: "Top P",
-      SubTitle: "Do not alter this value together with temperature",
+      SubTitle: "Larger values increase make the model more likely to choose unusual words. If you adjust this value, leave Temperature at the default.",
     },
     MaxTokens: {
-      Title: "Max Tokens",
-      SubTitle: "Maximum length of input tokens and generated tokens",
+      Title: "Maximum Tokens",
+      SubTitle: "Maximum number of input and output tokens.",
     },
     PresencePenalty: {
       Title: "Presence Penalty",
       SubTitle:
-        "A larger value increases the likelihood to talk about new topics",
+        "Larger values will make the model more likely to discuss new topics.",
     },
     FrequencyPenalty: {
       Title: "Frequency Penalty",
       SubTitle:
-        "A larger value decreasing the likelihood to repeat the same line",
+        "Larger values will make the model less likely to repeat words or phrases.",
     },
   },
   Store: {
@@ -530,9 +529,9 @@ const en: LocaleType = {
   Mask: {
     Name: "Mask",
     Page: {
-      Title: "Prompt Template",
-      SubTitle: (count: number) => `${count} prompt templates`,
-      Search: "Search Templates",
+      Title: "Masks",
+      SubTitle: (count: number) => `${count} masks`,
+      Search: "Search Masks",
       Create: "Create",
     },
     Item: {
@@ -541,7 +540,7 @@ const en: LocaleType = {
       View: "View",
       Edit: "Edit",
       Delete: "Delete",
-      DeleteConfirm: "Confirm to delete?",
+      DeleteConfirm: "Delete this mask?",
     },
     EditModal: {
       Title: (readonly: boolean) =>
