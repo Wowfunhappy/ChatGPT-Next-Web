@@ -723,7 +723,7 @@ export function ChatActions(props: {
         />
       )}
 
-      <ChatAction
+      {/*<ChatAction
         onClick={() => setShowPluginSelector(true)}
         text={Locale.Plugin.Name}
         icon={<PluginIcon />}
@@ -749,7 +749,7 @@ export function ChatActions(props: {
             }
           }}
         />
-      )}
+      )}*/}
     </div>
   );
 }
@@ -1010,6 +1010,22 @@ function _Chat() {
       doSubmit(userInput);
       e.preventDefault();
     }
+    
+    //Make option+enter insert a new line, to match behavior of e.g. iMessage.
+    if (e.key === "Enter" && e.altKey) {
+      const cursorPos = e.currentTarget.selectionStart; // Find cursor position
+      const updatedInput = userInput.substring(0, cursorPos) + "\n" + userInput.substring(cursorPos); // Add newline
+      setUserInput(updatedInput); // Update the state with the new input value
+
+      setTimeout(() => {
+        // Move the cursor to the new position after the newline
+        e.currentTarget.selectionStart = e.currentTarget.selectionEnd = cursorPos + 1;
+      }, 0);
+
+      e.preventDefault();
+      return;
+    }
+    
   };
   const onRightClick = (e: any, message: ChatMessage) => {
     // copy to clipboard
