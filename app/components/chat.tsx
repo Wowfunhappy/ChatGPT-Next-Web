@@ -557,7 +557,7 @@ export function ChatActions(props: {
           icon={props.uploading ? <LoadingButtonIcon /> : <ImageIcon />}
         />
       )}
-      <ChatAction
+      {/*<ChatAction
         onClick={nextTheme}
         text={Locale.Chat.InputActions.Theme[theme]}
         icon={
@@ -571,13 +571,13 @@ export function ChatActions(props: {
             ) : null}
           </>
         }
-      />
+      />*/}
 
-      <ChatAction
+      {/*<ChatAction
         onClick={props.showPromptHints}
         text={Locale.Chat.InputActions.Prompt}
         icon={<PromptIcon />}
-      />
+      />*/}
 
       <ChatAction
         onClick={() => {
