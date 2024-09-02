@@ -13,11 +13,11 @@ import { createPersistStore } from "../utils/store";
 export type ModelType = (typeof DEFAULT_MODELS)[number]["name"];
 
 export enum SubmitKey {
-  Enter = "Enter",
-  CtrlEnter = "Ctrl + Enter",
-  ShiftEnter = "Shift + Enter",
-  AltEnter = "Alt + Enter",
-  MetaEnter = "Meta + Enter",
+  Enter = "Return",
+  CtrlEnter = "Control-Return",
+  ShiftEnter = "Shift-Return",
+  AltEnter = "Option-Return",
+  MetaEnter = "Command-Return",
 }
 
 export enum Theme {
