@@ -2,12 +2,12 @@
 // azure and openai, using same models. so using same LLMApi.
 import {
   ApiPath,
-  DEFAULT_API_HOST,
   DEFAULT_MODELS,
   OpenaiPath,
   Azure,
   REQUEST_TIMEOUT_MS,
   ServiceProvider,
+  OPENAI_BASE_URL,
 } from "@/app/constant";
 import { useAccessStore, useAppConfig, useChatStore } from "@/app/store";
 import { collectModelsWithDefaultModel } from "@/app/utils/model";
@@ -74,6 +74,8 @@ export interface DalleRequestPayload {
   style: DalleStyle;
 }
 
+const DEFAULT_API_HOST = OPENAI_BASE_URL;
+
 export class ChatGPTApi implements LLMApi {
   private disableListModels = true;
 
@@ -96,7 +98,7 @@ export class ChatGPTApi implements LLMApi {
     if (baseUrl.length === 0) {
       const isApp = !!getClientConfig()?.isApp;
       const apiPath = isAzure ? ApiPath.Azure : ApiPath.OpenAI;
-      baseUrl = isApp ? DEFAULT_API_HOST + "/proxy" + apiPath : apiPath;
+      baseUrl = isApp ? DEFAULT_API_HOST + apiPath : apiPath;
     }
 
     if (baseUrl.endsWith("/")) {

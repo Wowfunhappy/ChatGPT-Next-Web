@@ -45,10 +45,10 @@ export enum Path {
 
 export enum ApiPath {
   Cors = "",
-  Azure = "/api/azure",
-  OpenAI = "/api/openai",
-  Anthropic = "/api/anthropic",
-  Google = "/api/google",
+  Azure = "",
+  OpenAI = "",
+  Anthropic = "",
+  Google = "",
   Baidu = "/api/baidu",
   ByteDance = "/api/bytedance",
   Alibaba = "/api/alibaba",

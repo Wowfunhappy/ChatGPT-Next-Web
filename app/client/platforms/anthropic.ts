@@ -1,8 +1,7 @@
-import { ACCESS_CODE_PREFIX, Anthropic, ApiPath } from "@/app/constant";
+import { ACCESS_CODE_PREFIX, Anthropic, ApiPath, ANTHROPIC_BASE_URL } from "@/app/constant";
 import { ChatOptions, getHeaders, LLMApi, MultimodalContent } from "../api";
 import { useAccessStore, useAppConfig, useChatStore } from "@/app/store";
 import { getClientConfig } from "@/app/config/client";
-import { DEFAULT_API_HOST } from "@/app/constant";
 import {
   EventStreamContentType,
   fetchEventSource,
@@ -13,6 +12,8 @@ import { prettyObject } from "@/app/utils/format";
 import { getMessageTextContent, isVisionModel } from "@/app/utils";
 import { preProcessImageContent } from "@/app/utils/chat";
 import { cloudflareAIGatewayUrl } from "@/app/utils/cloudflare";
+
+const DEFAULT_API_HOST = ANTHROPIC_BASE_URL;
 
 export type MultiBlockContent = {
   type: "image" | "text";
@@ -371,7 +372,7 @@ export class ClaudeApi implements LLMApi {
       const isApp = !!getClientConfig()?.isApp;
 
       baseUrl = isApp
-        ? DEFAULT_API_HOST + "/api/proxy/anthropic"
+        ? DEFAULT_API_HOST 
         : ApiPath.Anthropic;
     }
 

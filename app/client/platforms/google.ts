@@ -1,8 +1,7 @@
-import { ApiPath, Google, REQUEST_TIMEOUT_MS } from "@/app/constant";
+import { ApiPath, Google, REQUEST_TIMEOUT_MS, GEMINI_BASE_URL } from "@/app/constant";
 import { ChatOptions, getHeaders, LLMApi, LLMModel, LLMUsage } from "../api";
 import { useAccessStore, useAppConfig, useChatStore } from "@/app/store";
 import { getClientConfig } from "@/app/config/client";
-import { DEFAULT_API_HOST } from "@/app/constant";
 import Locale from "../../locales";
 import {
   EventStreamContentType,
@@ -16,6 +15,8 @@ import {
 } from "@/app/utils";
 import { preProcessImageContent } from "@/app/utils/chat";
 
+const DEFAULT_API_HOST = GEMINI_BASE_URL;
+
 export class GeminiProApi implements LLMApi {
   path(path: string): string {
     const accessStore = useAccessStore.getState();
@@ -27,7 +28,7 @@ export class GeminiProApi implements LLMApi {
 
     const isApp = !!getClientConfig()?.isApp;
     if (baseUrl.length === 0) {
-      baseUrl = isApp ? DEFAULT_API_HOST + `/api/proxy/google` : ApiPath.Google;
+      baseUrl = isApp ? DEFAULT_API_HOST : ApiPath.Google;
     }
     if (baseUrl.endsWith("/")) {
       baseUrl = baseUrl.slice(0, baseUrl.length - 1);

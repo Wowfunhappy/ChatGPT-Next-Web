@@ -4,6 +4,9 @@ import {
   GoogleSafetySettingsThreshold,
   ServiceProvider,
   StoreKey,
+  OPENAI_BASE_URL,
+  ANTHROPIC_BASE_URL,
+  GEMINI_BASE_URL,
 } from "../constant";
 import { getHeaders } from "../client/api";
 import { getClientConfig } from "../config/client";
@@ -15,12 +18,11 @@ let fetchState = 0; // 0 not fetch, 1 fetching, 2 done
 
 const isApp = getClientConfig()?.buildMode === "export";
 
-const DEFAULT_OPENAI_URL = "https://api.openai.com";
+const DEFAULT_OPENAI_URL = OPENAI_BASE_URL;
+const DEFAULT_GOOGLE_URL = GEMINI_BASE_URL;
+const DEFAULT_ANTHROPIC_URL = ANTHROPIC_BASE_URL;
 
-const DEFAULT_GOOGLE_URL = "https://generativelanguage.googleapis.com";
-
-const DEFAULT_ANTHROPIC_URL = "https://api.anthropic.com";
-
+//None of these should be used!!
 const DEFAULT_BAIDU_URL = isApp
   ? DEFAULT_API_HOST + "/api/proxy/baidu"
   : ApiPath.Baidu;
@@ -48,6 +50,7 @@ const DEFAULT_STABILITY_URL = isApp
 const DEFAULT_IFLYTEK_URL = isApp
   ? DEFAULT_API_HOST + "/api/proxy/iflytek"
   : ApiPath.Iflytek;
+//End of stuff that shouldn't be used
 
 const DEFAULT_ACCESS_STATE = {
   accessCode: "",
