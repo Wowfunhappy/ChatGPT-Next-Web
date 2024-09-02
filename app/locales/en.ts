@@ -40,7 +40,7 @@ const en: LocaleType = {
       Stop: "Stop",
       Retry: "Retry",
       Pin: "Pin",
-      PinToastContent: "Pinned 1 messages to contextual prompts",
+      PinToastContent: "Pinned to contextual prompts",
       PinToastAction: "View",
       Delete: "Delete",
       Edit: "Edit",
@@ -65,15 +65,15 @@ const en: LocaleType = {
       Prompt: "Prompts",
       Masks: "Masks",
       Clear: "Clear Context",
-      Settings: "Preferences",
+      Settings: "Chat Settings",
       UploadImage: "Upload Images",
     },
     Rename: "Rename Chat",
-    Typing: "Typing…",
+    Typing: "Working…",
     Input: (submitKey: string) => {
-      var inputHints = `${submitKey} to send`;
+      var inputHints = `${submitKey} to send.`;
       if (submitKey === String(SubmitKey.Enter)) {
-        inputHints += ", Shift + Enter to wrap";
+        inputHints += " Option-Return to wrap.";
       }
       return inputHints;
     },
