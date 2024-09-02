@@ -78,6 +78,11 @@ app.on('ready', () => {
 			contextMenu.popup(mainWindow);
 		}, 20); //timeout needed for text to appear highlighted
 	});
+	
+	app.setAboutPanelOptions({
+		copyright: 'Based on NextChat: nextchat.dev\nAdapted for classic OS X by Wowfunhapy\nApp icon by Microsoft',
+		website: 'jonathanalland.com'
+	});
 });
 
 app.on('window-all-closed', () => {
