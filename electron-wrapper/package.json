@@ -1,6 +1,6 @@
 {
   "name": "Future Chat",
-  "version": "2024.08.26",
+  "version": "2024.09.02",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
