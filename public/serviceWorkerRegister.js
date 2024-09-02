@@ -1,4 +1,4 @@
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && !navigator.userAgent.includes('Electron')) {
   window.addEventListener('DOMContentLoaded', function () {
     navigator.serviceWorker.register('/serviceWorker.js').then(function (registration) {
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
