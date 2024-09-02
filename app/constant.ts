@@ -357,7 +357,7 @@ export const DEFAULT_MODELS = [
       sorted: 1, // 这里是固定的，确保顺序与之前内置的版本一致
     },
   })),
-  ...openaiModels.map((name) => ({
+  /*...openaiModels.map((name) => ({
     name,
     available: true,
     sorted: seq++,
@@ -367,7 +367,7 @@ export const DEFAULT_MODELS = [
       providerType: "azure",
       sorted: 2,
     },
-  })),
+  })),*/
   ...googleModels.map((name) => ({
     name,
     available: true,

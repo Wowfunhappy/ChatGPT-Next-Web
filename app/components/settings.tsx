@@ -743,7 +743,7 @@ export function Settings() {
     </>
   );
 
-  const azureConfigComponent = accessStore.provider ===
+  /*const azureConfigComponent = accessStore.provider ===
     ServiceProvider.Azure && (
     <>
       <ListItem
@@ -797,7 +797,7 @@ export function Settings() {
         ></input>
       </ListItem>
     </>
-  );
+  );*/
 
   const googleConfigComponent = accessStore.provider ===
     ServiceProvider.Google && (
@@ -1572,7 +1572,7 @@ export function Settings() {
                   </ListItem>
 
                   {openAIConfigComponent}
-                  {azureConfigComponent}
+                  {/*{azureConfigComponent}*/}
                   {googleConfigComponent}
                   {anthropicConfigComponent}
                   {/*{baiduConfigComponent}
